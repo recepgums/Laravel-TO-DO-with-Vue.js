@@ -21,7 +21,8 @@ window.Vue = require('vue').default;
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
+import locale from 'element-ui/lib/locale/lang/tr-TR'
+Vue.use(ElementUI,{locale});
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('todo-create-form', require('./components/TodoCreateForm.vue').default);

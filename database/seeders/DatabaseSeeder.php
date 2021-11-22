@@ -21,14 +21,15 @@ class DatabaseSeeder extends Seeder
             'email'=>'admin@admin.com',
             'password' => Hash::make('password')
         ]);
-        User::create([
+        $user = User::create([
             'name'=>'User',
             'email'=>'user@user.com',
             'password' => Hash::make('password')
         ]);
+        $user->todos()->saveMany(Todo::factory( 10)->make());
          \App\Models\User::factory(10)->create()->each(function ($u){
              $u->todos()
-                 ->saveMany(Todo::factory( 5)->make());
+                 ->saveMany(Todo::factory( random_int(3,7))->make());
          });
     }
 }

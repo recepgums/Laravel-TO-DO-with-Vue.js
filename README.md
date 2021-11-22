@@ -10,10 +10,11 @@
 ## Laravel Vue Todo List
 
 In order to run this project, follow these comment below after cloned this repo ;
-- composer install
+- composer update
 - php artisan key:generate
 - php artisan migrate:refresh --seed
 - npm install
 - npm run dev
 - admin@admin.com - password
 - user@user.com - password
+- php artisan serve

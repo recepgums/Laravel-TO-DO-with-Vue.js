@@ -10,7 +10,7 @@
                 width="75"
             >
                 <template slot-scope="scope">
-                    <el-checkbox v-model="scope.row.is_done"></el-checkbox>
+                    <el-checkbox v-model="scope.row.is_done" @change="todoChangeFunction(scope.row.id)"></el-checkbox>
                 </template>
             </el-table-column>
 
@@ -115,6 +115,25 @@
                             }
                         })
                     })
+            },
+            todoChangeFunction(id){
+                axios
+                    .patch('/todo/'+id ,{
+                        done_at: true
+                    })
+                    .then(resp => {
+                        this.$notify({
+                            title: 'Success',
+                            message: resp.data.message,
+                            type: 'success'
+                        });
+                    }).catch(error=> {
+                    this.$notify({
+                        title: 'Error',
+                        message: error.data.message,
+                        type: 'error'
+                    });
+                })
             }
         },
         mounted() {

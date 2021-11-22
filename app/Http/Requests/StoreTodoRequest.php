@@ -24,7 +24,7 @@ class StoreTodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'content'=>'required|min:2',
+            'content'=>'nullable|min:2',
         ];
     }
 }
