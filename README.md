@@ -9,7 +9,7 @@
 
 ## Laravel Vue Todo List
 
-In order to run this project, follow these comment below after cloned this repo ;
+In order to run this project, follow these commands below after cloned this repo ;
 - composer update
 - php artisan key:generate
 - php artisan migrate:refresh --seed
